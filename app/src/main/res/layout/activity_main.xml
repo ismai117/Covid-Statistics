@@ -234,11 +234,19 @@
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Currently Infected Patients"
+                            android:textColor="@color/black"/>
+
+
                     </LinearLayout>
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
+                        android:background="@drawable/borders"
                         android:gravity="center_vertical"
                         android:weightSum="1">
 
@@ -263,6 +271,24 @@
                             android:textColorHint="@color/white"
                             android:textSize="16sp"
                             android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/mildCondition_cases"
+                            android:layout_alignParentLeft="true"
+                            android:layout_marginStart="20dp"
+                            android:text="in Mild Condition"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/criticalCondition_cases"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginEnd="20dp"
+                            android:text="Serious or Critical"
+                            android:textColor="@color/black" />
 
                     </RelativeLayout>
                 </LinearLayout>
@@ -321,11 +347,18 @@
                             android:textSize="16sp"
                             android:textStyle="bold" />
 
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Cases which had an outcome:"
+                            android:textColor="@color/black"/>
+
                     </LinearLayout>
 
                     <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="60dp"
+                        android:background="@drawable/borders"
                         android:gravity="center_vertical"
                         android:weightSum="1">
 
@@ -335,6 +368,7 @@
                             android:layout_height="wrap_content"
                             android:layout_alignParentStart="true"
                             android:layout_marginStart="20dp"
+                            android:gravity="center"
                             android:textColor="#8ACA2B"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -348,6 +382,24 @@
                             android:textColor="#333333"
                             android:textSize="16sp"
                             android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/recovered_value"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginStart="20dp"
+                            android:text="Recovered"
+                            android:textColor="@color/black" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/death_value"
+                            android:layout_alignParentEnd="true"
+                            android:layout_marginEnd="20dp"
+                            android:text="Deaths"
+                            android:textColor="@color/black" />
 
                     </RelativeLayout>
                 </LinearLayout>
