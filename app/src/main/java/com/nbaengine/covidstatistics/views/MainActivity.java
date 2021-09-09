@@ -90,22 +90,7 @@ public class MainActivity extends AppCompatActivity {
                         String country = covidResponse.response.get(0).country;
                         String population = String.valueOf(covidResponse.response.get(0).population);
 
-                        // cases
-                        String new_cases = covidResponse.response.get(0).cases.newCases;
-                        String active_cases = String.valueOf(covidResponse.response.get(0).cases.active);
-                        String critical_cases = String.valueOf(covidResponse.response.get(0).cases.critical);
-                        long recovered_cases = covidResponse.response.get(0).cases.recovered;
-                        String oneM_pop_cases = covidResponse.response.get(0).cases.oneM_pop;
-                        long total_cases = covidResponse.response.get(0).cases.total;
-
-                        // deaths
-                        String new_death = covidResponse.response.get(0).deaths.newCases;
-                        String oneM_pop_death = covidResponse.response.get(0).deaths.oneM_pop;
-                        long total_death = covidResponse.response.get(0).deaths.total;
-
-                        // tests
-                        String oneM_pop_test = covidResponse.response.get(0).tests.oneM_pop;
-                        String total_test = String.valueOf(covidResponse.response.get(0).tests.total);
+                        ;
 
                         String covid_lastUpated = covidResponse.response.get(0).time;
 
@@ -114,17 +99,16 @@ public class MainActivity extends AppCompatActivity {
                         lastUpdated.setText(covid_lastUpated);
                         countryTitleValue.setText(country.toUpperCase());
                         countryValue.setText(country.toUpperCase());
-                        casesValue.setText(formatter.format(total_cases));
-                        deathsValue.setText(formatter.format(total_death));
-                        recoveredValue.setText(formatter.format(recovered_cases));
-                        activeCases.setText(formatter.format(active_cases + critical_cases));
-                        closedCases.setText(formatter.format(recovered_cases + total_death));
 
-                        mildCasses.setText(formatter.format(active_cases));
-                        criticalCases.setText(formatter.format(critical_cases));
-
-                        recoveredCases.setText(formatter.format(recovered_cases));
-                        deathCases.setText(formatter.format(total_death));
+                        casesValue.setText(formatter.format(covidResponse.response.get(0).cases.total));
+                        deathsValue.setText(formatter.format(covidResponse.response.get(0).deaths.total));
+                        recoveredValue.setText(formatter.format(covidResponse.response.get(0).cases.recovered));
+                        activeCases.setText(formatter.format(covidResponse.response.get(0).cases.active + covidResponse.response.get(0).cases.critical));
+                        closedCases.setText(formatter.format(covidResponse.response.get(0).cases.recovered + covidResponse.response.get(0).deaths.total));
+                        mildCasses.setText(formatter.format(covidResponse.response.get(0).cases.active));
+                        criticalCases.setText(formatter.format(covidResponse.response.get(0).cases.critical));
+                        recoveredCases.setText(formatter.format(covidResponse.response.get(0).cases.recovered));
+                        deathCases.setText(formatter.format(covidResponse.response.get(0).deaths.total));
 
                         final int flag = World.getFlagOf(country.toLowerCase());
                         countryFlag.setImageResource(flag);
@@ -134,24 +118,24 @@ public class MainActivity extends AppCompatActivity {
 
                                 "continent: " + covidResponse.response.get(0).continent + " \n" +
                                 "country: " + covidResponse.response.get(0).country + " \n" +
-                                "population: " + covidResponse.response.get(0).population + "\n\n" +
+                                "population: " + formatter.format(covidResponse.response.get(0).population) + "\n\n" +
 
                                 "cases" + "\n" +
-                                "new: " + covidResponse.response.get(0).cases.newCases + "\n" +
-                                "active: " + covidResponse.response.get(0).cases.active + "\n" +
-                                "critical: " + covidResponse.response.get(0).cases.critical + "\n" +
-                                "recovered: " + covidResponse.response.get(0).cases.recovered + "\n" +
-                                "1M_pop: " + covidResponse.response.get(0).cases.oneM_pop + "\n" +
-                                "total: " + covidResponse.response.get(0).cases.total + "\n\n" +
+                                "new: " + formatter.format(covidResponse.response.get(0).cases.newCases) + "\n" +
+                                "active: " + formatter.format(covidResponse.response.get(0).cases.active) + "\n" +
+                                "critical: " + formatter.format(covidResponse.response.get(0).cases.critical) + "\n" +
+                                "recovered: " + formatter.format(covidResponse.response.get(0).cases.recovered) + "\n" +
+                                "1M_pop: " + formatter.format(covidResponse.response.get(0).cases.oneM_pop) + "\n" +
+                                "total: " + formatter.format(covidResponse.response.get(0).cases.total) + "\n\n" +
 
                                 "death" + "\n" +
-                                "new: " + covidResponse.response.get(0).deaths.newCases + "\n" +
-                                "1M_pop: " + covidResponse.response.get(0).deaths.oneM_pop + "\n" +
-                                "total: " + covidResponse.response.get(0).deaths.total + "\n" +
+                                "new: " + formatter.format(covidResponse.response.get(0).deaths.newCases) + "\n" +
+                                "1M_pop: " + formatter.format(covidResponse.response.get(0).deaths.oneM_pop) + "\n" +
+                                "total: " + formatter.format(covidResponse.response.get(0).deaths.total) + "\n" +
 
                                 "tests" + "\n" +
-                                "1M_pop: " + covidResponse.response.get(0).tests.oneM_pop + "\n" +
-                                "total: " + covidResponse.response.get(0).tests.total + "\n" +
+                                "1M_pop: " + formatter.format(covidResponse.response.get(0).tests.oneM_pop) + "\n" +
+                                "total: " + formatter.format(covidResponse.response.get(0).tests.total) + "\n" +
 
                                 "last updated: " + covidResponse.response.get(0).time
 
